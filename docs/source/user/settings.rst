@@ -248,6 +248,25 @@ In the event there is no user in the database corresponding to the ``username`` 
 accounting instance, the failure will be logged with ``warning`` level but the accounting
 will be saved as usual.
 
+``OPENWISP_RADIUS_ALLOWED_MOBILE_PREFIXES``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Default**: ``[]``
+
+This setting is used to specify a list of international mobile prefixes which should
+be allowed to register into the system. That is, only phone numbers with these prefixes will
+be saved into the system. Leaving this unset or setting it with an empty list (``[]``) will
+mean phone numbers with any international prefix can be saved into the system.
+For example:
+
+.. code-block:: python
+
+    OPENWISP_RADIUS_ALLOWED_MOBILE_PREFIXES = ['+44', '+237']
+
+using the setting above will allow only phone numbers with either ``+44`` or ``+237`` as prefix
+to be registered.
+
+
 Email related settings
 ======================
 
